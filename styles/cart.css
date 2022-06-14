@@ -14,9 +14,21 @@
 body {
   font-family: 'Montserrat', sans-serif;
   display: grid;
-  min-height: 100vh;
   place-items: center;
   background: linear-gradient(to right, #74ebd5, #acb6e5);
+}
+/* head-section */
+.head-sec {
+  width: 100%;
+  border-radius: 0.35rem;
+  padding: 1rem;
+  margin: 0 0;
+  /* background-color: #ecf0f1; */
+  box-shadow: 2px 4px 11px -1px #000;
+}
+.progress-section {
+  width: clamp(320px, 100%, 430px);
+  float: right;
 }
 /* label */
 label {
@@ -53,7 +65,7 @@ input {
   position: relative;
   display: flex;
   justify-content: space-between;
-  margin: 2rem 0 4rem 0;
+  margin: 1rem 0 1rem 0;
 }
 .progress-step::before {
   counter-increment: step;
@@ -83,8 +95,9 @@ input {
 
 /* form */
 .form {
-  width: clamp(320px, 30%, 430px);
+  width: clamp(320px, 100%, 430px);
   border-radius: 0.35rem;
+  margin: 2rem 0;
   border: 1px solid grey;
   padding: 1.5rem;
   background-color: #ecf0f1;
