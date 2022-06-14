@@ -1,0 +1,137 @@
+*{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:13px;
+}
+#upper_strip{
+    display:flex;
+    background-color: #2b8afb;
+    color:#ffffff;
+    justify-content: space-between;
+    height:35px;
+    border-bottom:0.5px solid #ffffff;
+}
+.top_right{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right:60px;
+}
+.top_icon{
+    display:flex;
+    align-items: center;
+    margin:0px 0px 0px 40px;
+}
+.top_icon>#mobile_icon{
+    margin-right:6px;
+}
+.top_icon>#arrow{
+    height:20px;
+    width:20px;
+}
+#middle_strip{
+    height:85px;
+    background-color: #1275fd;
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.search_box{
+    display:flex;
+    background-color: #ffffff;
+    align-items: center;
+    width:600px;
+    height:40px;
+    border-radius: 6px;
+}
+.search_category{
+    display:flex;
+    align-items: center;
+    padding-left:10px;
+    padding-right:5%;
+    color:#a17575;
+    border-right:1px solid #a17575;
+    cursor: pointer;
+}
+#category_arrow{
+    margin-left:8px;
+    height:10px;
+    width:15px;
+}
+.search_input{
+    display:flex;
+    align-items: center;
+}
+.search_input>.search_key{
+    border:none;
+    outline: none;
+    width:400px;
+    padding-left:20px;
+    color:#a17575;
+}
+.middle_icons{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.middle_icons>.ship_select{
+    margin-right: 30px;
+}
+.middle_icons>.sign_in{
+    margin-right: 30px;
+}
+.middle_icons>.cart{
+    margin-right: 30px;
+}
+.ship_select>span{
+    color:#ffffff;
+}
+#flag_icon{
+    height:25px;
+    width:35px;
+    margin-right: 4px;
+}
+.currency{
+    display:flex;
+    align-items: center;
+    color:#ffffff;
+}
+.currency>#currency_arrow{
+    height:10px;
+    width:15px; 
+}
+.sign_in{
+    color:white;
+    display:flex;
+    align-items: center;
+}
+.sign_in>p{
+    margin-left:4px;
+    margin-top:8px;
+}
+#lower_strip{
+    height:30px;
+    background-color: #1275fd;
+    display:flex;
+    padding-left:32px;
+    padding-bottom: 2px;
+    justify-content: left;
+    align-items: center;
+}
+.contents{
+    display:flex;
+    width:60%;
+    justify-content: space-around;
+    align-items: center;
+    color:#ffffff;
+}
+.cat_div{
+    display:flex;
+    align-items: center;
+}
+.cat_div>img{
+    height:13px;
+    width:14px;
+    margin-right: 10px;
+}
+
