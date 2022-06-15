@@ -81,7 +81,6 @@ input {
   width: 100%;
   padding: 0.75rem;
   outline: none;
-  border: 1px solid #ccc;
   border-radius: 0.25rem;
 }
 /* progress */
@@ -142,13 +141,10 @@ input {
 
 /* form */
 .form {
-  width: clamp(320px, 100%, 430px);
-  border-radius: 0.35rem;
+  width: 90%;
   margin: 2rem 0;
-  border: 1px solid grey;
   padding: 1.5rem;
-  background-color: #ecf0f1;
-  box-shadow: 2px 4px 11px -1px #000;
+  /* border: 1px solid rgb(0, 0, 255, 0.4); */
 }
 
 .input-group {
@@ -161,15 +157,26 @@ input {
   margin-left: auto;
 }
 .btn {
-  padding: 0.75rem;
+  padding: 0.86rem 0.9rem;
   display: block;
+  font-size: 20px;
   text-align: center;
   text-decoration: none;
-  background-color: rgb(72, 72, 227);
+  background-color: #06f;
   color: white;
   border-radius: 0.25rem;
   cursor: pointer;
   transition: all 250ms ease-in-out;
+  margin-right: 10px;
+}
+.paybtn {
+  width: auto;
+  height: auto;
+  position: relative;
+  border: none;
+}
+.paybtn > img {
+  border-radius: 0.2rem;
 }
 .btn:active {
   transform: scale(0.98);
@@ -206,4 +213,199 @@ input {
 }
 .form-step.active {
   display: block;
+}
+.fw-bold {
+  font-weight: bold;
+}
+.currency {
+  width: 200px;
+  float: right;
+  font-size: 13px;
+  text-align: center;
+  position: relative;
+}
+.currency > p {
+  font-size: 12px;
+}
+.currency > img {
+  width: 16%;
+  margin-left: -12px;
+}
+.currency > span {
+  margin: 0 0 10px;
+  position: absolute;
+  top: 19px;
+  left: 120px;
+  font-size: 13px;
+}
+
+.shop-product {
+  width: 100%;
+  margin: 30px 0;
+}
+
+.shop-product > table > thead {
+  font-size: 14px;
+  line-height: 45px;
+  height: 45px;
+}
+
+.shop_head {
+  background-color: #f1f1f1;
+  color: #999;
+  width: 1200px;
+  margin-bottom: 40px;
+  font-size: 14px;
+}
+.shop_head > td {
+  text-align: left;
+}
+.cartitemList {
+  border: 1px solid #e6e7e8;
+}
+
+.prd-dtls {
+  display: flex;
+  align-items: center;
+}
+.prd-dtls > p {
+  font-size: 14px;
+  color: #333;
+  width: 380px;
+}
+
+#cartitemList > tr > td > img {
+  width: 20%;
+}
+.shop_warehouse > td {
+  text-align: left;
+}
+.with-10 {
+  width: 10%;
+}
+.qwt {
+  display: flex;
+  border-collapse: collapse;
+}
+.qwt > .icon {
+  font-size: 16px;
+  border: 1px solid #ccc;
+  padding: 3%;
+  width: 30px;
+  text-align: center;
+}
+.qwt > input {
+  border-radius: 0;
+  color: black;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  border-left: none;
+  border-right: none;
+  width: 35%;
+  padding: 0;
+  text-align: center;
+  font-size: 16px;
+  height: 30px;
+}
+
+.shop_table_price > span {
+  color: #333;
+  font-size: 14px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.shop_table_tprice > span {
+  font-weight: bold;
+}
+.shop_table_iconxin {
+  width: 120px;
+  text-align: center;
+  position: relative;
+  font-size: 14px;
+  color: #333;
+}
+.shop_table_iconxin > i {
+  cursor: pointer;
+  display: block;
+  margin: 0 auto 8px auto;
+  text-decoration: underline;
+  font-style: normal;
+}
+.shop_table_iconxin > em {
+  cursor: pointer;
+  display: block;
+  margin: 0 auto 8px auto;
+  text-decoration: underline;
+  font-style: normal;
+}
+
+.checkout_section {
+  height: 100px;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.left-checkout-area {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cnt_shping {
+  font-size: 14px;
+  margin: 0 0 0 10px;
+}
+
+.cnt_shping::after {
+  border: 1px #8a8a8a solid;
+  position: absolute;
+  top: 50%;
+  margin-top: -2px;
+  right: -12px;
+  width: 5px;
+  height: 5px;
+  content: '';
+  display: inline-block;
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+  -moz-transform: rotate(-135deg);
+  -ms-transform: rotate(-135deg);
+}
+
+.chsed_item {
+  color: #999;
+  font-size: 14px;
+  line-height: 44px;
+  display: inline-block;
+  padding-right: 34px;
+}
+.chsed_item > b {
+  color: #333;
+}
+
+.ttl_itm {
+  color: #333;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 22px;
+}
+
+.ttl_itm > b {
+  font-size: 24px;
+  color: #ff4500;
+}
+
+.arrow {
+  border: solid #333;
+  border-width: 0 1px 1px 0;
+  display: inline-block;
+  padding: 3px;
+}
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
 }
