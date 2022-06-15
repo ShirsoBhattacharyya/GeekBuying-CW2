@@ -40,7 +40,8 @@ function updateProgressbar() {
     }
   });
   const progressActive = document.querySelectorAll('.progress-step.active');
-  console.log(progressActive);
-  progress.style.width =
+  let barLength =
     ((progressActive.length - 1) / (progressSteps.length - 1)) * 100 + '%';
+
+  progress.style.width = barLength == '0%' ? '24%' : barLength;
 }

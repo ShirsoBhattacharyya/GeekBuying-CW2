@@ -9,27 +9,67 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif !important;
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
   display: grid;
   place-items: center;
-  background: linear-gradient(to right, #74ebd5, #acb6e5);
+  background-color: #fff;
 }
 /* head-section */
-.head-sec {
+.head {
   width: 100%;
-  border-radius: 0.35rem;
+  height: 100px;
   padding: 1rem;
   margin: 0 0;
-  /* background-color: #ecf0f1; */
-  box-shadow: 2px 4px 11px -1px #000;
+  background-image: linear-gradient(to bottom, #318ffb, #06f);
+  /* box-shadow: 2px 4px 11px -1px #000; */
+}
+
+.head-content {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+.left-area {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 .progress-section {
   width: clamp(320px, 100%, 430px);
   float: right;
+  transform: translateY(10%);
 }
+.shop_icon .shop_img {
+  width: 188px;
+  height: 50px;
+  display: inline-block;
+  background: url(https://content1.geekbuying.com/V1.4/en/images/indexV7/Geekbuying.png)
+    no-repeat center;
+  background-size: 100%;
+}
+.shop_secure {
+  border-left: 1px solid rgba(255, 255, 255, 0.4);
+  padding-left: 3rem;
+  transform: translateY(10%);
+  margin: 0.2rem 0 0 2rem;
+  color: #fff;
+}
+.shop_secure::before {
+  content: '';
+  width: 16px;
+  height: 35px;
+  background: url(https://content1.geekbuying.com/V1.4/en/images/secure_checkout.png)
+    no-repeat center;
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: 6px;
+  margin-right: 6px;
+}
+
 /* label */
 label {
   display: block;
@@ -53,12 +93,12 @@ input {
   width: 100%;
   height: 4px;
   transform: translateY(-50%);
-  background-color: #dcdcdc;
+  background-color: #6ba6ff;
   counter-reset: step;
 }
 .progress {
-  background-color: #4848e3;
-  width: 0;
+  background-color: #fff;
+  width: 24%;
   transition: 0.3s;
 }
 .progressbar {
@@ -67,14 +107,20 @@ input {
   justify-content: space-between;
   margin: 1rem 0 1rem 0;
 }
-.progress-step::before {
+.progressbar > div:nth-child(2) {
+  margin: 0 0 0 6rem;
+}
+.progressbar > div:last-child {
+  margin: 0 6rem 0 0;
+}
+/* .progress-step::before {
   counter-increment: step;
   content: counter(step);
-}
+} */
 .progress-step {
-  width: 35px;
-  height: 35px;
-  background-color: #dcdcdc;
+  width: 18px;
+  height: 18px;
+  background-color: #6ba6ff;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -84,12 +130,13 @@ input {
 .progress-step::after {
   content: attr(data-title);
   position: absolute;
-  top: calc(100% + 0.5rem);
+  top: calc(100% + 0.1rem);
   font-size: 0.8rem;
-  color: #666666;
+  color: #fff;
 }
 .progress-step.active {
-  background-color: #4848e3;
+  background-color: #074ea3;
+  border: 2px solid #fff;
   color: #fff;
 }
 
