@@ -69,3 +69,5 @@ let updata = [
     country: 'Spain',
   },
 ];
+
+localStorage.setItem('cart_data', JSON.stringify(updata))

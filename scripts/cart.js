@@ -15,6 +15,7 @@ display(cartData);
 // create Elements
 function display(data) {
   let count = 0;
+  parent.innerHTML = null;
   data.forEach((el, index) => {
     let row = document.createElement('tr');
     row.classList = 'shop_warehouse';
@@ -66,23 +67,18 @@ function display(data) {
     td5.classList = 'shop_table_iconxin';
     let whislist = document.createElement('i');
     whislist.innerText = 'Whislist';
-    let remove = document.createElement('em');
-    remove.innerText = 'Delete';
-    remove.addEventListener('click', () => {
-      remove(index);
+    let rm = document.createElement('em');
+    rm.innerText = 'Delete';
+    rm.addEventListener('click', () => {
+         remove(el, index);
     });
-    td5.append(whislist, remove);
+    td5.append(whislist, rm);
 
     row.append(td1, td2, td3, td4, td5);
     parent.append(row);
   });
 }
 
-let remove = (index) => {
-  cartData.splice(index, 1);
-  localStorage.setItem('cart_data', JSON.stringify(cartData));
-  window.location.reload();
-};
 
 //checkbox
 let prdChecked = (el, id) => {
@@ -104,7 +100,7 @@ let increment = (el, qwtData, tPrice, id) => {
   el.quantity++;
   qwtData.value = el.quantity;
   tPrice.innerText = el.price * el.quantity;
-  console.log(el.checked)
+  // console.log(el.checked)
   if(el.checked){
     slctdProdPrc += Number(el.price);
     ttl_itm.innerText = slctdProdPrc;
@@ -129,7 +125,18 @@ let decrement = (el, qwtData, tPrice, id) => {
   }
 
 };
-
+//remove item
+let remove = (el,index)=>{
+  if(el.checked){
+    slctdProdPrc -= el.price*el.quantity
+    ttl_itm.innerText = slctdProdPrc;
+    localStorage.setItem('allPrice', JSON.stringify(slctdProdPrc));
+  }
+  cartData.splice(index, 1);
+  console.log(cartData)
+  localStorage.setItem('cart_data', JSON.stringify(cartData));
+  display(cartData)
+}
 // Progress Bar functionality
 nextBtns.forEach((btn) => {
   btn.addEventListener('click', () => {
