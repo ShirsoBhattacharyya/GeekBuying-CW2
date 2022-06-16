@@ -293,6 +293,7 @@ input {
   padding: 3%;
   width: 30px;
   text-align: center;
+  cursor: pointer;
 }
 .qwt > input {
   border-radius: 0;
@@ -318,7 +319,7 @@ input {
 .shop_table_tprice > span {
   font-weight: bold;
 }
-.shop_table_iconxin {
+.shop_warehouse > .shop_table_iconxin {
   width: 120px;
   text-align: center;
   position: relative;
@@ -360,22 +361,6 @@ input {
   margin: 0 0 0 10px;
 }
 
-.cnt_shping::after {
-  border: 1px #8a8a8a solid;
-  position: absolute;
-  top: 50%;
-  margin-top: -2px;
-  right: -12px;
-  width: 5px;
-  height: 5px;
-  content: '';
-  display: inline-block;
-  transform: rotate(-135deg);
-  -webkit-transform: rotate(-135deg);
-  -moz-transform: rotate(-135deg);
-  -ms-transform: rotate(-135deg);
-}
-
 .chsed_item {
   color: #999;
   font-size: 14px;
@@ -400,7 +385,7 @@ input {
 }
 
 .arrow {
-  border: solid #333;
+  border: solid hsl(0, 0%, 20%, 0.6);
   border-width: 0 1px 1px 0;
   display: inline-block;
   padding: 3px;
