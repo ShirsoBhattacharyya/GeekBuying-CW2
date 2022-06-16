@@ -7,9 +7,14 @@ const progressSteps = document.querySelectorAll('.progress-step');
 let formStepsNum = 0;
 let parent = document.querySelector('#cartitemList');
 let cartData = JSON.parse(localStorage.getItem('cart_data')) || [];
-let slctdProdPrc = JSON.parse(localStorage.getItem('allPrice')) || 0;
+let selectedProduct = JSON.parse(localStorage.getItem('selected_product')) || {
+  price: 0,
+  itemNums: 0,
+};
 let ttl_itm = document.querySelector('.ttl_itm>b');
-ttl_itm.innerText = slctdProdPrc;
+let chsed_item = document.querySelector('.chsed_item>b');
+chsed_item.innerText = selectedProduct.itemNums;
+ttl_itm.innerText = selectedProduct.price;
 display(cartData);
 
 // create Elements
@@ -57,9 +62,9 @@ function display(data) {
     let dec = document.createElement('i');
     dec.classList = 'icon';
     dec.innerText = '-';
-      dec.addEventListener('click', () => {
-        decrement(el, qwtData, tPrice, checkbox.id);
-      });
+    dec.addEventListener('click', () => {
+      decrement(el, qwtData, tPrice, checkbox.id);
+    });
     td3.append(dec, qwtData, inc);
     let td4 = document.createElement('td');
     td4.append(tPrice);
@@ -70,7 +75,7 @@ function display(data) {
     let rm = document.createElement('em');
     rm.innerText = 'Delete';
     rm.addEventListener('click', () => {
-         remove(el, index);
+      remove(el, index);
     });
     td5.append(whislist, rm);
 
@@ -79,19 +84,21 @@ function display(data) {
   });
 }
 
-
 //checkbox
 let prdChecked = (el, id) => {
   let checkBox = document.querySelector(`#${id}`);
   if (checkBox.checked == true) {
-    slctdProdPrc += el.price * el.quantity;
+    selectedProduct.price += el.price * el.quantity;
+    selectedProduct.itemNums += el.quantity;
     el.checked = true;
   } else {
-    slctdProdPrc -= el.price * el.quantity;
+    selectedProduct.price -= el.price * el.quantity;
+    selectedProduct.itemNums -= el.quantity;
     el.checked = false;
   }
-  ttl_itm.innerText = slctdProdPrc;
-  localStorage.setItem('allPrice', JSON.stringify(slctdProdPrc));
+  ttl_itm.innerText = selectedProduct.price;
+  chsed_item.innerText = selectedProduct.itemNums;
+  localStorage.setItem('selected_product', JSON.stringify(selectedProduct));
   localStorage.setItem('cart_data', JSON.stringify(cartData));
 };
 
@@ -101,42 +108,47 @@ let increment = (el, qwtData, tPrice, id) => {
   qwtData.value = el.quantity;
   tPrice.innerText = el.price * el.quantity;
   // console.log(el.checked)
-  if(el.checked){
-    slctdProdPrc += Number(el.price);
-    ttl_itm.innerText = slctdProdPrc;
-    // console.log(slctdProdPrc)
-    localStorage.setItem('allPrice', JSON.stringify(slctdProdPrc));
+  if (el.checked) {
+    selectedProduct.price += Number(el.price);
+    selectedProduct.itemNums++;
+    chsed_item.innerText = selectedProduct.itemNums;
+    ttl_itm.innerText = selectedProduct.price;
+    // console.log(selectedProduct.price)
+    localStorage.setItem('selected_product', JSON.stringify(selectedProduct));
   }
   localStorage.setItem('cart_data', JSON.stringify(cartData));
 };
 // Decrement
 let decrement = (el, qwtData, tPrice, id) => {
-  if(el.quantity>1){
+  if (el.quantity > 1) {
     el.quantity--;
     qwtData.value = el.quantity;
     tPrice.innerText = el.price * el.quantity;
-    if(el.checked){
-      slctdProdPrc -= Number(el.price);
-      ttl_itm.innerText = slctdProdPrc;
-      // console.log(slctdProdPrc)
-      localStorage.setItem('allPrice', JSON.stringify(slctdProdPrc));
+    if (el.checked) {
+      selectedProduct.price -= Number(el.price);
+      selectedProduct.itemNums--;
+      ttl_itm.innerText = selectedProduct.price;
+      chsed_item.innerText = selectedProduct.itemNums;
+      // console.log(selectedProduct.price)
+      localStorage.setItem('selected_product', JSON.stringify(selectedProduct));
     }
     localStorage.setItem('cart_data', JSON.stringify(cartData));
   }
-
 };
 //remove item
-let remove = (el,index)=>{
-  if(el.checked){
-    slctdProdPrc -= el.price*el.quantity
-    ttl_itm.innerText = slctdProdPrc;
-    localStorage.setItem('allPrice', JSON.stringify(slctdProdPrc));
+let remove = (el, index) => {
+  if (el.checked) {
+    selectedProduct.price -= el.price * el.quantity;
+    selectedProduct.itemNums -= el.quantity;
+    ttl_itm.innerText = selectedProduct.price;
+    chsed_item.innerText = selectedProduct.itemNums;
+    localStorage.setItem('selected_product', JSON.stringify(selectedProduct));
   }
   cartData.splice(index, 1);
-  console.log(cartData)
+  console.log(cartData);
   localStorage.setItem('cart_data', JSON.stringify(cartData));
-  display(cartData)
-}
+  display(cartData);
+};
 // Progress Bar functionality
 nextBtns.forEach((btn) => {
   btn.addEventListener('click', () => {

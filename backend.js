@@ -1,4 +1,3 @@
-
 let updata = [
   {
     name: 'SCULPFUN 30L/Min 200-240V Air Pump Compressor for Laser Engraver',
@@ -70,4 +69,4 @@ let updata = [
   },
 ];
 
-localStorage.setItem('cart_data', JSON.stringify(updata))
+// localStorage.setItem('cart_data', JSON.stringify(updata));

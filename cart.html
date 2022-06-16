@@ -82,7 +82,9 @@
           </div>
         </div>
         <div class="checkout_section">
-          <span class="cnt_shping">Continue shoping <i class="arrow right"></i></span>
+          <span class="cnt_shping"
+            >Continue shoping <i class="arrow right"></i
+          ></span>
           <div class="left-checkout-area">
             <span class="chsed_item">You Choose <b>0</b> items</span>
             <span class="ttl_itm">Total : <b>₹ 0.00</b></span>
@@ -99,13 +101,28 @@
         </div>
       </div>
 
-      <div class="form-step">
+      <span class="fw-bold m-10">Shipping Address</span>
+      <div class="form-step border">
         <div class="input-group">
-          <label for="Phone">Phone</label>
+          <label for="Phone"><span class="require">*</span>First Name:</label>
           <input type="text" name="phone" id="phone" />
         </div>
         <div class="input-group">
-          <label for="email">Email</label>
+          <label for="Phone"><span class="require">*</span>Last Name:</label>
+          <input type="text" name="phone" id="phone" />
+        </div>
+        <div class="input-group">
+          <label for="Phone"
+            ><span class="require">*</span>Country/Region:</label
+          >
+          <input type="text" name="phone" id="phone" />
+        </div>
+        <div class="input-group">
+          <label for="Phone"><span class="require">*</span>Phone</label>
+          <input type="text" name="phone" id="phone" />
+        </div>
+        <div class="input-group">
+          <label for="email"><span class="require">*</span>Email</label>
           <input type="text" name="email" id="email" />
         </div>
         <div class="btns-group">
@@ -131,5 +148,5 @@
     </form>
   </body>
   <script type="text/javascript" src="./scripts/cart.js"></script>
-   
+  <script src="./backend.js"></script>
 </html>

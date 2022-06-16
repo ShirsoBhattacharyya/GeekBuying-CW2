@@ -70,17 +70,39 @@ body {
   margin-right: 6px;
 }
 
-/* label */
-label {
-  display: block;
-  margin-bottom: 0.5rem;
+.input-group {
+  margin: 1rem 5rem;
+  display: flex;
+  /* border: 1px solid #ccc; */
+  width: 50%;
 }
-/* general settings */
-input {
+.m-10 {
+  margin: 10px 0;
   display: block;
-  width: 100%;
-  padding: 0.75rem;
+}
+
+/* label */
+.input-group > label {
+  margin: 0.5rem;
+  font-size: 14px;
+  width: 30%;
+  color: #2c3e50;
+}
+.require {
+  color: red;
+  font-size: 0.9rem;
+}
+.border {
+  border: 1px solid #e6e7e8;
+  border-radius: 0.2rem;
+}
+
+/* general settings */
+.input-group > input {
+  width: 50%;
+  border: 1px solid #ccc;
   outline: none;
+  padding: 0.6rem 1rem;
   border-radius: 0.25rem;
 }
 /* progress */
@@ -147,9 +169,6 @@ input {
   /* border: 1px solid rgb(0, 0, 255, 0.4); */
 }
 
-.input-group {
-  margin: 2rem 0;
-}
 .with-50 {
   width: 50%;
 }
@@ -159,6 +178,7 @@ input {
 .btn {
   padding: 0.86rem 0.9rem;
   display: block;
+  width: 50%;
   font-size: 20px;
   text-align: center;
   text-decoration: none;
@@ -193,7 +213,9 @@ input {
 .btns-group {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
+  gap: 1rem;
+  justify-content:space-between;
+  width: 100%;
 }
 
 .form-step {
@@ -365,6 +387,7 @@ input {
   color: #999;
   font-size: 14px;
   line-height: 44px;
+  width: 175px;
   display: inline-block;
   padding-right: 34px;
 }
@@ -375,6 +398,7 @@ input {
 .ttl_itm {
   color: #333;
   font-size: 15px;
+  width: 130px;
   font-weight: bold;
   line-height: 22px;
 }
