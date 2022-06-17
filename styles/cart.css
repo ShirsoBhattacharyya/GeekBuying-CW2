@@ -214,7 +214,7 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
-  justify-content:space-between;
+  justify-content: space-between;
   width: 100%;
 }
 
@@ -387,9 +387,9 @@ body {
   color: #999;
   font-size: 14px;
   line-height: 44px;
-  width: 175px;
   display: inline-block;
   padding-right: 34px;
+  width: 225px;
 }
 .chsed_item > b {
   color: #333;
@@ -398,9 +398,9 @@ body {
 .ttl_itm {
   color: #333;
   font-size: 15px;
-  width: 130px;
   font-weight: bold;
   line-height: 22px;
+  width: 145px;
 }
 
 .ttl_itm > b {

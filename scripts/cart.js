@@ -44,7 +44,7 @@ function display(data) {
     let td2 = document.createElement('td');
     td2.classList = 'shop_table_price';
     let price = document.createElement('span');
-    price.innerText = el.price;
+    price.innerText = `₹ ${el.price}`;
     td2.append(price);
     let td3 = document.createElement('td');
     td3.classList = 'qwt';
